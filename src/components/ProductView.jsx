@@ -47,9 +47,15 @@ class ProductView extends Component{
             <div className={"product-list"} style={{display:"inline-flex",marginTop:"150px"}}>
                 
                 {itemData.map((item,index)=>{
-                    return <div style={{width:'250px',height:'250px'}} key={`${item.title}-${index}`}><img src={item.img} style={{border: "1px solid #ddd", borderRadius: "4px",padding: "5px",width: "150px", height: "150px"}}/>
+                    return <div style={{width:'250px',height:'250px'}} key={`${item.title}-${index}`}>
+                        <img src={item.img} style={{border: "1px solid #ddd", 
+                            borderRadius: "4px",
+                            padding: "5px",
+                            width: "150px", 
+                            height: "150px",
+                        }}/>
                         <h2>{item.title}</h2>
-                        <h3>{item.price*this.state.conversion_rates}</h3>
+                        <h3>{`${this.state.conversion_rates === 1 ? "Rs. ":"$ "}${(item.price*this.state.conversion_rates).toFixed(2)}`}</h3>
                     </div>
                 })}
                 <div>
