@@ -42,7 +42,6 @@ class ProductView extends Component{
         localStorage.setItem("currency",e.target.value);
     }    
     render() {
-        console.log(this.state.conversion_rates)
         return (
             <div className={"product-list"} style={{display:"inline-flex",marginTop:"150px"}}>
                 
