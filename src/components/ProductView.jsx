@@ -6,8 +6,8 @@ import axios from 'axios';
 
 const itemData = [
     {img:sneaker,title:"Nike Casual Show",price:"85.00"},
-    {img:bag,title:"Nike Bag",price:"95.00"},
-    {img:watch,title:"Nike Watch",price:"100.00"}]
+    {img:bag,title:"Nike Bag",price:"15.00"},
+    {img:watch,title:"Nike Watch",price:"25.00"}]
 class ProductView extends Component{
     constructor(props) {
         super(props)
