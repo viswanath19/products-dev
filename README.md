@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Deployment
+This project is deployed with heroku and can be accessed with the below mentioned url:
+https://product-view-kart.herokuapp.com/
+
+##### This stores the changed currency in the localStorage and the same currency converted rates will be available on refresh untill and unless the local storage is cleared and the default currency is INR.
+
 ## Available Scripts
 
 In the project directory, you can run:
