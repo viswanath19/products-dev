@@ -15,6 +15,14 @@ class ProductView extends Component{
             conversion_rates: 1
         }
     }
+    componentDidMount(){
+        if(localStorage.getItem("currency")==="USD") {
+            axios({
+                method:'get',
+                url:`https://v6.exchangerate-api.com/v6/17d425e62402531e0afe4c59/latest/USD`
+            }).then((resp)=>this.setState({conversion_rates:resp.data.conversion_rates["INR"]}));
+        }
+    }
     handleCurrency = (e) => {
         let exchangeRate = "INR";
         switch(e.target.value) {
@@ -31,6 +39,7 @@ class ProductView extends Component{
                 conversion_rates: 1
             })
         }
+        localStorage.setItem("currency",e.target.value);
     }    
     render() {
         console.log(this.state.conversion_rates)
@@ -44,7 +53,7 @@ class ProductView extends Component{
                     </div>
                 })}
                 <div>
-                    <select onChange={(e) => this.handleCurrency(e)}>
+                    <select onChange={(e) => this.handleCurrency(e)} value={localStorage.getItem("currency") || "INR"}>
                         <option value={"INR"}>INR</option>
                         <option value={"USD"}>USD</option>
                     </select>
